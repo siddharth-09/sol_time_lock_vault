@@ -8,4 +8,5 @@ pub struct Vault {
     pub deposit_time : i64,
     pub maturity_time : i64,
     pub claimed : bool,
+    
 }

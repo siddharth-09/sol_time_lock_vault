@@ -35,5 +35,7 @@ describe("time_lock_vault", () => {
   it("Initialize Alice Vault With 10 sol!", async () => {
     await airdrop(provider.connection,alice.publicKey)
     console.log(await provider.connection.getBalance(alice.publicKey));
+
+    await program
   });
 });

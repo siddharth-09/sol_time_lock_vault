@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-use crate::{Treasury, Vault};
+use crate::{Treasury};
 
 #[derive(Accounts)]
 pub struct InitializeTreasury<'info>{
@@ -20,7 +20,7 @@ pub struct InitializeTreasury<'info>{
 impl<'info>InitializeTreasury<'info>{
     pub fn initialize(&mut self)->Result<()>{
         self.treasury.total_penalties = 0;
-        self.treasury.penalty_account = self.user.key();
+        self.treasury.authority = self.user.key();
         Ok(())
     }
 }

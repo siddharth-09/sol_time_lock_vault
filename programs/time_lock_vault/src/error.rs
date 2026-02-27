@@ -6,5 +6,4 @@ pub enum ErrorCode {
     InvalidAmount,
     #[msg("Duration must be greater than zero.")]
     InvalidDuration,
-    
 }

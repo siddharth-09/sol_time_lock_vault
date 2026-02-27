@@ -24,8 +24,15 @@ pub mod time_lock_vault {
         ctx.accounts.initialize()?;
         Ok(())
     }
-    pub fn withdraw_and_close_vault(ctx: Context<Withdraw>)->Result<()>{
+    pub fn withdraw_and_close_vault(ctx: Context<WithdrawVault>)->Result<()>{
         //implement withdraw and close the vault
+        ctx.accounts.withdraw_and_close(&ctx.bumps)?;
+        Ok(())
+    }
+
+    pub fn withdraw_and_treasury(ctx: Context<WithdrawTreasury>)->Result<()>{
+        //withdraw from treasury when needed
+        ctx.accounts.withdraw_and_close(&ctx.bumps)?;
         Ok(())
     }
 }

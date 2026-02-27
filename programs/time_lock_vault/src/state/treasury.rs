@@ -5,5 +5,5 @@ use anchor_lang::prelude::*;
 #[derive(InitSpace)]
 pub struct Treasury{
     pub total_penalties : u64,
-    pub penalty_account : Pubkey
+    pub authority : Pubkey,
 }
