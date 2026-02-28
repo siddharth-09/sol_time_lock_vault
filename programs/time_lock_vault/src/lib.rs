@@ -16,7 +16,7 @@ pub mod time_lock_vault {
     use super::*;
 
     pub fn initialize_vault(ctx: Context<InitializeVault>,amt:u64,duration:i64) -> Result<()> {
-        ctx.accounts.deposit(amt,duration)?;
+        ctx.accounts.deposit(amt,duration,&ctx.bumps)?;
         Ok(())
     }
     pub fn initialize_treasury(ctx: Context<InitializeTreasury>)->Result<()>{
@@ -30,7 +30,7 @@ pub mod time_lock_vault {
         Ok(())
     }
 
-    pub fn withdraw_and_treasury(ctx: Context<WithdrawTreasury>)->Result<()>{
+    pub fn withdraw_and_close_treasury(ctx: Context<WithdrawTreasury>)->Result<()>{
         //withdraw from treasury when needed
         ctx.accounts.withdraw_and_close(&ctx.bumps)?;
         Ok(())

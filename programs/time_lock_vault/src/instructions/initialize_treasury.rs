@@ -10,10 +10,16 @@ pub struct InitializeTreasury<'info>{
         init,
         payer = user,
         space = 8 + Treasury::INIT_SPACE,
-        seeds = [b"treasury",user.key().as_ref()],
+        seeds = [b"treasury"],
         bump
     )]
     pub treasury : Account<'info,Treasury>,
+    #[account(
+        mut,
+        seeds = [b"treasury_wallet",treasury.key().as_ref()],
+        bump
+    )]
+    pub treasury_wallet : SystemAccount<'info>,
     pub system_program : Program<'info,System>
 }
 

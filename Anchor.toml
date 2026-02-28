@@ -7,12 +7,14 @@ skip-lint = false
 
 [programs.localnet]
 time_lock_vault = "BE2fwKWJx9QZeNEinHAGA8HdVkVmiVhLwED7qJVUNJJF"
+[programs.devnet]
+time_lock_vault = "BE2fwKWJx9QZeNEinHAGA8HdVkVmiVhLwED7qJVUNJJF"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
